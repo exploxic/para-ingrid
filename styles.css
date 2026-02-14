@@ -11,7 +11,7 @@ body{
 
 .screen{
     display:none;
-    padding:30px 20px;
+    padding:30px 18px;
     height:100vh;
     position:relative;
     z-index:1;
@@ -39,89 +39,6 @@ button{
 
 button:hover{
     transform:scale(1.05);
-}
-
-/* ===== IMÁGENES RESPONSIVE ===== */
-
-/* ===== IMAGENES PERSONAJES ===== */
-
-.side{
-    position:fixed;
-    pointer-events:none;
-    object-fit:contain;
-    z-index:0;
-}
-
-/* ===== MODO CELULAR (vertical) ===== */
-@media (max-width: 768px){
-
-    .side{
-        width:55vw;
-        height:auto;
-        opacity:.12;
-        filter: blur(1px);
-    }
-
-    .left{
-        bottom:-10px;
-        left:-10px;
-    }
-
-    .right{
-        top:-10px;
-        right:-10px;
-    }
-
-    /* asegura que el contenido quede arriba */
-    .screen{
-        z-index:2;
-        position:relative;
-        padding:25px 18px;
-    }
-
-}
-
-/* ===== PANTALLAS GRANDES ===== */
-
-@media (min-width: 769px){
-
-    .side{
-        top:50%;
-        transform:translateY(-50%);
-        height:70vh;
-        opacity:.95;
-    }
-
-    .left{ left:0; }
-    .right{ right:0; }
-}
-
-/* PC */
-@media (min-width:768px){
-    .side{
-        top:50%;
-        transform:translateY(-50%);
-        height:70vh;
-        opacity:.95;
-    }
-    .left{ left:0; }
-    .right{ right:0; }
-}
-
-/* CELULAR */
-@media (max-width:767px){
-    .side{
-        height:26vh;
-        opacity:.25;
-    }
-    .left{
-        top:0;
-        left:0;
-    }
-    .right{
-        bottom:0;
-        right:0;
-    }
 }
 
 /* ===== MINIJUEGO ===== */

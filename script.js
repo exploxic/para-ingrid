@@ -1,4 +1,4 @@
-/* ===== NAVEGACION POR SECCIONES ===== */
+/* ===== NAVEGACION ===== */
 
 let current=0
 const screens=document.querySelectorAll(".screen")
@@ -10,7 +10,7 @@ function next(){
     screens[current].classList.add("active")
 }
 
-/* ===== MEDIDOR PODER ===== */
+/* ===== MEDIDOR ===== */
 
 function activarPoder(){
     const pl=document.getElementById("powerLevel")
