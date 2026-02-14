@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regalo Saiyajin</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div id="particles"></div>
+
+<img src="goku.jpg" class="side left">
+<img src="vegeta.jpg" class="side right">
+
+<!-- SECCION 1 -->
+<section class="screen active">
+    <h1>🐉 Regalo Especial</h1>
+    <p>Prepárate para cargar energía...</p>
+    <button onclick="next()">Comenzar</button>
+</section>
+
+<!-- SECCION 2 -->
+<section class="screen">
+    <h2>💛 Mensaje</h2>
+    <p>
+        Tu energía ilumina todo<br>
+        Eres increíble y poderosa⚡<br>te quiero mucho ingrid
+        <br> ten un feliz 14 de febrero
+    </p>
+    <button onclick="next()">Siguiente</button>
+</section>
+
+<!-- SECCION 3 -->
+<section class="screen">
+    <h2>⚡ Cargar Ki</h2>
+    <button onclick="activarPoder()">Activar</button>
+    <div id="powerLevel"></div>
+    <button onclick="next()">Continuar</button>
+</section>
+
+<!-- SECCION 4 — MINIJUEGO -->
+<section class="screen">
+    <h2>🎯 Atrapa la Energía</h2>
+
+    <div class="hud">
+        Puntos: <span id="score">0</span> |
+        Tiempo: <span id="time">20</span>
+    </div>
+
+    <div id="arena">
+        <div id="target"></div>
+    </div>
+
+    <div id="resultado"></div>
+
+    <button onclick="iniciarJuego()">Reiniciar</button>
+    <button onclick="next()">Final</button>
+</section>
+
+<!-- SECCION 5 -->
+<section class="screen">
+    <h2>🐲 Deseo Concedido</h2>
+    <p>
+        Que siempre tengas alegría,<br>
+        aventuras y poder infinito ✨
+    </p>
+    <button onclick="location.reload()">Repetir</button>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

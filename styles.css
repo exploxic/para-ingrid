@@ -1,0 +1,90 @@
+body{
+    margin:0;
+    font-family:Arial;
+    background:radial-gradient(circle,#0a0f2c,#000);
+    color:white;
+    text-align:center;
+    overflow:hidden;
+}
+
+/* pantallas */
+
+.screen{
+    display:none;
+    padding:30px 20px;
+    height:100vh;
+}
+
+.screen.active{
+    display:block;
+    animation:fade .6s;
+}
+
+@keyframes fade{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+button{
+    background:orange;
+    border:none;
+    padding:14px 20px;
+    margin:10px;
+    font-size:16px;
+    border-radius:10px;
+}
+
+/* imágenes grandes */
+
+.side{
+    position:fixed;
+    top:50%;
+    transform:translateY(-50%);
+    height:70vh;
+    opacity:.9;
+    pointer-events:none;
+}
+
+.left{ left:0; }
+.right{ right:0; }
+
+/* minijuego */
+
+#arena{
+    position:relative;
+    width:90%;
+    max-width:420px;
+    height:260px;
+    margin:15px auto;
+    background:#111;
+    border-radius:12px;
+}
+
+#target{
+    position:absolute;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:radial-gradient(circle,yellow,orange);
+    box-shadow:0 0 20px orange;
+}
+
+.hud{
+    font-size:18px;
+}
+
+/* partículas */
+
+#particles span{
+    position:fixed;
+    width:6px;
+    height:6px;
+    background:orange;
+    border-radius:50%;
+    animation:floatUp linear infinite;
+}
+
+@keyframes floatUp{
+    from{transform:translateY(100vh);}
+    to{transform:translateY(-10vh); opacity:0;}
+}
