@@ -1,6 +1,6 @@
 body{
     margin:0;
-    font-family:Arial;
+    font-family:Arial, sans-serif;
     background:radial-gradient(circle,#0a0f2c,#000);
     color:white;
     text-align:center;
@@ -13,6 +13,8 @@ body{
     display:none;
     padding:30px 20px;
     height:100vh;
+    position:relative;
+    z-index:1;
 }
 
 .screen.active{
@@ -32,32 +34,62 @@ button{
     margin:10px;
     font-size:16px;
     border-radius:10px;
+    cursor:pointer;
 }
 
-/* imágenes grandes */
+button:hover{
+    transform:scale(1.05);
+}
+
+/* ===== IMÁGENES RESPONSIVE ===== */
 
 .side{
     position:fixed;
-    top:50%;
-    transform:translateY(-50%);
-    height:70vh;
-    opacity:.9;
+    z-index:0;
     pointer-events:none;
+    object-fit:contain;
 }
 
-.left{ left:0; }
-.right{ right:0; }
+/* PC */
+@media (min-width:768px){
+    .side{
+        top:50%;
+        transform:translateY(-50%);
+        height:70vh;
+        opacity:.95;
+    }
+    .left{ left:0; }
+    .right{ right:0; }
+}
 
-/* minijuego */
+/* CELULAR */
+@media (max-width:767px){
+    .side{
+        height:26vh;
+        opacity:.25;
+    }
+    .left{
+        top:0;
+        left:0;
+    }
+    .right{
+        bottom:0;
+        right:0;
+    }
+}
+
+/* ===== MINIJUEGO ===== */
 
 #arena{
     position:relative;
-    width:90%;
+    width:92%;
     max-width:420px;
     height:260px;
     margin:15px auto;
     background:#111;
     border-radius:12px;
+    border:2px solid #333;
+    overflow:hidden;
 }
 
 #target{
@@ -67,10 +99,17 @@ button{
     border-radius:50%;
     background:radial-gradient(circle,yellow,orange);
     box-shadow:0 0 20px orange;
+    cursor:pointer;
+    transition:transform .1s;
+}
+
+#target:active{
+    transform:scale(.8);
 }
 
 .hud{
     font-size:18px;
+    margin-top:10px;
 }
 
 /* partículas */

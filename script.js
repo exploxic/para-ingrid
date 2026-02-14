@@ -1,4 +1,4 @@
-/* navegación secciones */
+/* ===== NAVEGACION POR SECCIONES ===== */
 
 let current=0
 const screens=document.querySelectorAll(".screen")
@@ -10,29 +10,30 @@ function next(){
     screens[current].classList.add("active")
 }
 
-/* poder */
+/* ===== MEDIDOR PODER ===== */
 
 function activarPoder(){
-    let pl=document.getElementById("powerLevel")
+    const pl=document.getElementById("powerLevel")
     let p=0
+
     let i=setInterval(()=>{
         p+=Math.floor(Math.random()*8000)
         pl.innerHTML="Poder: "+p
+
         if(p>9000){
-    pl.innerHTML="¡¡SU PENDEJES ES DE MÁS DE 9000!! 🔥 (tqm xd)"
-    clearInterval(i)
-
-
+            pl.innerHTML="¡¡SU PENDEJES ES DE MÁS DE 9000!! 🔥 (tqm xd)"
+            clearInterval(i)
         }
     },200)
 }
 
-/* partículas */
+/* ===== PARTICULAS ===== */
 
 for(let i=0;i<40;i++){
     let s=document.createElement("span")
     s.style.left=Math.random()*100+"vw"
     s.style.animationDuration=(3+Math.random()*4)+"s"
+    s.style.opacity=Math.random()
     document.getElementById("particles").appendChild(s)
 }
 
@@ -71,7 +72,7 @@ function iniciarJuego(){
     mover()
 
     clearInterval(moverLoop)
-    moverLoop=setInterval(mover,900)
+    moverLoop=setInterval(mover,850)
 
     clearInterval(reloj)
     reloj=setInterval(()=>{
@@ -86,10 +87,10 @@ function fin(){
     clearInterval(moverLoop)
     clearInterval(reloj)
 
-    if(puntos<10) resultado.innerHTML="Nivel humano 🙂"
+    if(puntos<10) resultado.innerHTML="Nivel civil 🙂"
     else if(puntos<20) resultado.innerHTML="Nivel guerrera 💥"
-    else if(puntos<35) resultado.innerHTML="Nivel súper saiyajin ⚡"
-    else resultado.innerHTML="Nivel god xd 👑🔥"
+    else if(puntos<35) resultado.innerHTML="Nivel súper ⚡"
+    else resultado.innerHTML="Nivel legendario 👑🔥"
 }
 
 iniciarJuego()
